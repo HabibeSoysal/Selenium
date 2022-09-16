@@ -30,6 +30,6 @@ public class C05_Locators {
          */
         driver.findElement(By.partialLinkText("oducts on Amazon")).click(); // a tag'ındaki link isminden istediğimiz
         // bir parçayla locate edebiliriz
-        driver.findElement(By.linkText("Sell products on Amazon")).click();
+       // driver.findElement(By.linkText("Sell products on Amazon")).click();
     }
 }
