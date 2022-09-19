@@ -29,12 +29,12 @@ driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 //                a. http://a.testaddressbook.com adresine gidiniz.
         driver.get("http://a.testaddressbook.com ");
 //        b. Sign in butonuna basin
-        WebElement signInButton=driver.findElement(By.linkText("sign-in")); ;
-       signInButton .click();
+        WebElement signInButton=driver.findElement(By.linkText("Sign in"));
+        signInButton .click();
 //        c. email textbox,password textbox, and signin button elementlerini locate ediniz..
         WebElement emailTextBox= driver.findElement(By.id("session_email"));
         WebElement password= driver.findElement(By.id("session_password"));
-        WebElement signIn= driver.findElement(By.id("commit"));
+        WebElement signIn= driver.findElement(By.name("commit"));
 
 //        d. Kullanıcı adını ve şifreyi aşağıya girin ve oturum aç (sign in)buttonunu tıklayın:
 //        i. Username : testtechproed@gmail.com
@@ -61,6 +61,7 @@ driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         if (addresses.isDisplayed()){
             System.out.println("Adresses TESTİ PASSED");
         }else System.out.println("Adresses Testi FAILED");
+
         if (signOut.isDisplayed()){
             System.out.println("SignOut TESTİ PASSED");
         }else System.out.println("SignOut Testi FAILED");
@@ -69,8 +70,10 @@ driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 //        3. Sayfada kac tane link oldugunu bulun.
         List<WebElement>linkSayisi= driver.findElements(By.tagName("a"));
         System.out.println("Linklerin sayısı = "+ linkSayisi.size());
-        System.out.println(linkSayisi);
-//
+
+// //5. Linkleri LAMBDA ile yazdırınız
+
+            linkSayisi.stream().forEach(t-> System.out.println(t.getText()));
 
 
 

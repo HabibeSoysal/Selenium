@@ -67,20 +67,22 @@ public class sinifCalismasi {
         if (addresses.isDisplayed()){
             System.out.println("Adresses TESTİ PASSED");
         }else System.out.println("Adresses Testi FAILED");
+
         if (signOut.isDisplayed()){
             System.out.println("SignOut TESTİ PASSED");
         }else System.out.println("SignOut Testi FAILED");
+
         //3. Sayfada kac tane link oldugunu bulun.
-        List<WebElement> linklerListesi = driver.findElements(By.tagName("a"));
-        System.out.println("Linklerin sayısı = "+linklerListesi.size());
-        System.out.println(linklerListesi);
+        List<WebElement> linksayisi = driver.findElements(By.tagName("a"));
+        System.out.println("Linklerin sayısı = "+linksayisi.size());
+        System.out.println(linksayisi);
 
         //4. Linkleri yazdırınız
-        for (WebElement each:linklerListesi) {
+        for (WebElement each:linksayisi) {
             System.out.println("Linkler : "+each.getText());
         }
         //5. Linkleri LAMBDA ile yazdırınız
-        linklerListesi.stream().forEach(t-> System.out.println(t.getText()));
+        linksayisi.stream().forEach(t-> System.out.println(t.getText()));
         //6. Sayfayı kapatınız
         driver.close();
 
